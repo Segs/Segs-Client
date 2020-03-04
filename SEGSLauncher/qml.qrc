@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/Fonts/dejavusans.ttf</file>
+        <file>Resources/Fonts/cuppajoe.ttf</file>
+        <file>Resources/Icons/app-icon.svg</file>
+        <file>Resources/Icons/loader.gif</file>
+        <file>main.qml</file>
+        <file>MainWindow.qml</file>
+        <file>Setup.qml</file>
+        <file>Resources/Images/segs-logo.png</file>
+        <file>ServerDialog.qml</file>
+        <file>Resources/Icons/monitor.svg</file>
+        <file>Resources/Icons/refresh-cw.svg</file>
+        <file>Resources/Icons/globe_green.svg</file>
+        <file>Resources/Icons/globe_red.svg</file>
+        <file>Resources/Icons/server_green.svg</file>
+        <file>Resources/Icons/server_red.svg</file>
+        <file>Resources/Images/background_rectangle.png</file>
+        <file>Resources/Images/bluestreak.png</file>
+        <file>Resources/Images/button_play.png</file>
+        <file>Resources/Images/button_settings.png</file>
+        <file>Resources/Fonts/Cantarell-Bold.ttf</file>
+        <file>Resources/Fonts/Cantarell-Oblique.ttf</file>
+        <file>Resources/Fonts/Cantarell-Regular.ttf</file>
+    </qresource>
+</RCC>
