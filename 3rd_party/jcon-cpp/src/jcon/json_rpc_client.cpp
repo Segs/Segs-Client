@@ -7,6 +7,7 @@
 //#include <QSignalSpy>
 #include <QCoreApplication>
 #include <QUuid>
+#include <stdexcept>
 
 #include <memory>
 

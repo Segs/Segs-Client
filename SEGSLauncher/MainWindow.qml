@@ -9,7 +9,7 @@ import segs.launcher 1.0
 import segs.worker 1.0
 
 
-ApplicationWindow {
+Window {
 
     id: root
     objectName: "mainWindow"
@@ -1135,8 +1135,8 @@ ApplicationWindow {
 
         Image {
             id: hero_image
-            x: -246
-            y: -163
+            x: -453
+            y: -283
             width: 942
             height: 683
             fillMode: Image.PreserveAspectFit
@@ -1402,32 +1402,8 @@ ApplicationWindow {
 
 
 
-/*##^## Designer {
-    D{i:0;height:715;width:1400}D{i:7;anchors_height:491;anchors_width:1106;anchors_x:"-7";anchors_y:0}
-D{i:11;anchors_height:491;anchors_width:1106;anchors_x:"-7";anchors_y:0}D{i:42;anchors_height:52;anchors_width:67;anchors_x:33;anchors_y:84}
-D{i:62;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}D{i:64;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}
-D{i:63;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}D{i:66;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}
-D{i:65;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}D{i:70;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}
-D{i:72;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}D{i:71;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}
-D{i:74;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}D{i:73;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}
-D{i:68;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}D{i:69;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}
-D{i:67;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}D{i:75;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}
-D{i:76;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}D{i:78;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}
-D{i:77;anchors_height:464;anchors_width:668;anchors_x:15;anchors_y:0}D{i:80;anchors_height:52;anchors_width:67;anchors_x:33;anchors_y:84}
-D{i:81;anchors_height:52;anchors_width:67;anchors_x:238;anchors_y:118}D{i:79;anchors_height:52;anchors_width:67;anchors_x:238;anchors_y:118}
-D{i:85;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}D{i:86;anchors_height:52;anchors_width:67;anchors_x:132;anchors_y:154}
-D{i:84;anchors_height:52;anchors_width:9;anchors_x:33;anchors_y:137}D{i:90;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}
-D{i:92;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}D{i:89;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}
-D{i:88;anchors_height:52;anchors_width:67;anchors_x:33;anchors_y:84}D{i:91;anchors_height:52;anchors_width:9;anchors_x:33;anchors_y:137}
-D{i:87;anchors_height:52;anchors_width:67;anchors_x:33;anchors_y:84}D{i:94;anchors_height:52;anchors_width:9;anchors_x:132;anchors_y:154}
-D{i:93;anchors_height:52;anchors_width:9;anchors_x:132;anchors_y:154}D{i:83;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}
-D{i:96;anchors_height:52;anchors_width:9;anchors_x:132;anchors_y:154}D{i:97;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}
-D{i:98;anchors_height:52;anchors_width:9;anchors_x:132;anchors_y:154}D{i:100;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}
-D{i:99;anchors_height:64;anchors_width:570;anchors_x:0;anchors_y:40}D{i:102;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}
-D{i:101;anchors_height:52;anchors_width:9;anchors_x:132;anchors_y:154}D{i:103;anchors_height:52;anchors_width:9;anchors_x:132;anchors_y:154}
-D{i:104;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}D{i:105;anchors_height:52;anchors_width:9;anchors_x:132;anchors_y:154}
-D{i:95;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}D{i:82;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}
-D{i:106;anchors_width:9;anchors_x:132;anchors_y:154}D{i:107;anchors_height:52;anchors_width:9;anchors_x:95;anchors_y:109}
-D{i:6;anchors_x:132;anchors_y:154}
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
 }
- ##^##*/
+##^##*/
