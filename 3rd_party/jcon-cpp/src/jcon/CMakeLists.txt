@@ -16,5 +16,6 @@ target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Network Qt5::WebSockets)
 install(TARGETS ${PROJECT_NAME}
         RUNTIME DESTINATION bin
         LIBRARY DESTINATION lib
-        PUBLIC_HEADER DESTINATION include/jcon
-        ARCHIVE DESTINATION lib)
+        ARCHIVE DESTINATION lib
+		PUBLIC_HEADER DESTINATION include/jcon
+)
