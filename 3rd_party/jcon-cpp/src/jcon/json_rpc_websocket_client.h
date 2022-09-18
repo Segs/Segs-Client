@@ -11,7 +11,7 @@ class JCON_API JsonRpcWebSocketClient : public JsonRpcClient
 public:
     JsonRpcWebSocketClient(QObject* parent = nullptr,
                            std::shared_ptr<JsonRpcLogger> logger = nullptr,
-                           int call_timeout_ms = 10000);
+                           int call_timeout_ms = 60000);
 
     virtual ~JsonRpcWebSocketClient();
 };
