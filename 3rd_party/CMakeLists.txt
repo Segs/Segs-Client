@@ -1,5 +1,4 @@
 link_directories(${ThirdParty_Install_Dir}/lib)
-link_directories(${ThirdParty_Install_Dir}/lib/static)
 
 # include(ExternalProject_ACE.cmake)
 # if(MINGW) # ERICEDIT: If the OS is Windows:
