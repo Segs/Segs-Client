@@ -1,0 +1,12 @@
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/CMakeFiles/Experimental.dir
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/CMakeFiles/Nightly.dir
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/CMakeFiles/Continuous.dir
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/CMakeFiles/NightlyMemoryCheck.dir
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/CMakeFiles/RUN_TESTS.dir
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/CMakeFiles/INSTALL.dir
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/CMakeFiles/ALL_BUILD.dir
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/CMakeFiles/ZERO_CHECK.dir
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/jcon.dir
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/RUN_TESTS.dir
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/INSTALL.dir
+C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/ALL_BUILD.dir
