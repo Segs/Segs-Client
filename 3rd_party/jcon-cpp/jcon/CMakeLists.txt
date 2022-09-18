@@ -10,8 +10,8 @@ file(GLOB ${PROJECT_NAME}_sources *.cpp)
 
 add_library(${PROJECT_NAME} STATIC ${${PROJECT_NAME}_headers} ${${PROJECT_NAME}_sources})
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${${PROJECT_NAME}_headers}")
-find_package(Qt5 COMPONENTS Core)
-qt5_use_modules(${PROJECT_NAME} Core Network Test WebSockets)
+find_package(Qt5 COMPONENTS Core Network WebSockets)
+target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Network)
 
 install(TARGETS ${PROJECT_NAME}
         RUNTIME DESTINATION bin
