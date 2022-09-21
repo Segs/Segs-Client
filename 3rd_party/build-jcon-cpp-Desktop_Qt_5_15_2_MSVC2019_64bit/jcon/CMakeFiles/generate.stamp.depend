@@ -1,0 +1,20 @@
+# CMake generation dependency list for this directory.
+C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/CMakeLists.txt
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5Config.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Network/Qt5NetworkConfig.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Test/Qt5TestConfig.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Test/Qt5TestConfigExtras.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Test/Qt5TestConfigVersion.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5WebSockets/Qt5WebSocketsConfig.cmake
+C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5WebSockets/Qt5WebSocketsConfigVersion.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.23/Modules/CMakeParseArguments.cmake
+C:/Qt/Tools/QtCreator/share/qtcreator/package-manager/auto-setup.cmake

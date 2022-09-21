@@ -1,0 +1,312 @@
+{
+	"BUILD_DIR" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/jcon_autogen",
+	"CMAKE_BINARY_DIR" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon",
+	"CMAKE_EXECUTABLE" : "C:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/CMakeLists.txt",
+		"C:/Qt/Tools/QtCreator/share/qtcreator/package-manager/auto-setup.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5Config.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.23/Modules/CMakeParseArguments.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Network/Qt5NetworkConfig.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Test/Qt5TestConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Test/Qt5TestConfig.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5Test/Qt5TestConfigExtras.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5WebSockets/Qt5WebSocketsConfigVersion.cmake",
+		"C:/Qt/5.15.2/msvc2019_64/lib/cmake/Qt5WebSockets/Qt5WebSocketsConfig.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "C:/Code/Segs-Client/3rd_party/jcon-cpp",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/jcon.h",
+			"Mu",
+			"EWIEGA46WW/moc_jcon.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/jcon_assert.h",
+			"Mu",
+			"EWIEGA46WW/moc_jcon_assert.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_client.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_client.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_debug_logger.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_debug_logger.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_endpoint.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_endpoint.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_error.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_error.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_file_logger.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_file_logger.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_logger.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_logger.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_request.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_request.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_result.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_result.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_server.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_server.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_socket.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_socket.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_success.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_success.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_tcp_client.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_tcp_client.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_tcp_server.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_tcp_server.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_tcp_socket.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_tcp_socket.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_websocket.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_websocket.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_websocket_client.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_websocket_client.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_websocket_server.h",
+			"Mu",
+			"EWIEGA46WW/moc_json_rpc_websocket_server.cpp",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/string_util.h",
+			"Mu",
+			"EWIEGA46WW/moc_string_util.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/jcon_autogen/include",
+	"INCLUDE_DIR_Debug" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/jcon_autogen/include_Debug",
+	"INCLUDE_DIR_MinSizeRel" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/jcon_autogen/include_MinSizeRel",
+	"INCLUDE_DIR_RelWithDebInfo" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/jcon_autogen/include_RelWithDebInfo",
+	"INCLUDE_DIR_Release" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/jcon_autogen/include_Release",
+	"MOC_COMPILATION_FILE" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/jcon_autogen/mocs_compilation.cpp",
+	"MOC_COMPILATION_FILE_Debug" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/jcon_autogen/mocs_compilation_Debug.cpp",
+	"MOC_COMPILATION_FILE_MinSizeRel" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/jcon_autogen/mocs_compilation_MinSizeRel.cpp",
+	"MOC_COMPILATION_FILE_RelWithDebInfo" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/jcon_autogen/mocs_compilation_RelWithDebInfo.cpp",
+	"MOC_COMPILATION_FILE_Release" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/jcon_autogen/mocs_compilation_Release.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"NDEBUG",
+		"QT_CORE_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_TESTCASE_BUILDDIR=\"C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit\"",
+		"QT_TESTLIB_LIB",
+		"QT_WEBSOCKETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEFINITIONS_Debug" : 
+	[
+		"NDEBUG",
+		"QT_CORE_LIB",
+		"QT_NETWORK_LIB",
+		"QT_TESTCASE_BUILDDIR=\"C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit\"",
+		"QT_TESTLIB_LIB",
+		"QT_WEBSOCKETS_LIB",
+		"WIN32"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon",
+		"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon",
+		"C:/Qt/5.15.2/msvc2019_64/include",
+		"C:/Qt/5.15.2/msvc2019_64/include/QtCore",
+		"C:/Qt/5.15.2/msvc2019_64/mkspecs/win32-msvc",
+		"C:/Qt/5.15.2/msvc2019_64/include/QtNetwork",
+		"C:/Qt/5.15.2/msvc2019_64/include/QtTest",
+		"C:/Qt/5.15.2/msvc2019_64/include/QtWebSockets"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : [],
+	"MOC_PREDEFS_FILE" : "",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : true,
+	"PARALLEL" : 10,
+	"PARSE_CACHE_FILE" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/jcon_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE_Debug" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/jcon_autogen.dir/ParseCache_Debug.txt",
+	"PARSE_CACHE_FILE_MinSizeRel" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/jcon_autogen.dir/ParseCache_MinSizeRel.txt",
+	"PARSE_CACHE_FILE_RelWithDebInfo" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/jcon_autogen.dir/ParseCache_RelWithDebInfo.txt",
+	"PARSE_CACHE_FILE_Release" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/jcon_autogen.dir/ParseCache_Release.txt",
+	"QT_MOC_EXECUTABLE" : "C:/Qt/5.15.2/msvc2019_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/jcon_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE_Debug" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/jcon_autogen.dir/AutogenUsed_Debug.txt",
+	"SETTINGS_FILE_MinSizeRel" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/jcon_autogen.dir/AutogenUsed_MinSizeRel.txt",
+	"SETTINGS_FILE_RelWithDebInfo" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/jcon_autogen.dir/AutogenUsed_RelWithDebInfo.txt",
+	"SETTINGS_FILE_Release" : "C:/Code/Segs-Client/3rd_party/build-jcon-cpp-Desktop_Qt_5_15_2_MSVC2019_64bit/jcon/CMakeFiles/jcon_autogen.dir/AutogenUsed_Release.txt",
+	"SOURCES" : 
+	[
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_client.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_debug_logger.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_endpoint.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_error.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_file_logger.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_logger.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_request.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_server.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_success.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_tcp_client.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_tcp_server.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_tcp_socket.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_websocket.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_websocket_client.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/json_rpc_websocket_server.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Code/Segs-Client/3rd_party/jcon-cpp/jcon/string_util.cpp",
+			"Mu",
+			null
+		]
+	],
+	"VERBOSITY" : 0
+}

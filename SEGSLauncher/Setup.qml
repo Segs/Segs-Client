@@ -27,8 +27,6 @@ ApplicationWindow {
     property string cox_dir: ""
 
 
-
-
 Item {
     id: main
     Label {
