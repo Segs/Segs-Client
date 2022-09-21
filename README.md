@@ -18,10 +18,10 @@ $> make
 ```
 
 The finished application should be now in your __out__/ folder that was created inside your build folder. 
-Running the application will generate the SEGSLauncher.conf file. Location of the config file will vary depending on your OS Platform. The format of the file is a .ini format. 
+Running the application will generate the SEGSLauncher.conf file. Location of the config file will vary depending on your OS Platform. The format of the file is a .ini format. Best practice is for all changes to config to be managed from within Launcher. In the event you do need access to the config file their locations are below.
 
 - Linux: /home/{username}/.config/SEGS/SEGSLauncher.conf
-- Windows:
+- Windows: Saved in Windows Registry at HKEY_CURRENT_USER\Software\Cryptic\SEGS 
 - Mac: /Users/{username}/Library/Preferences/io.segs.SEGSLauncher.plist
 
 ## SEGS Client
