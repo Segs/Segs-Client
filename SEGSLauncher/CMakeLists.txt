@@ -24,8 +24,6 @@ set(SEGSLAUNCHER_SOURCES
     LauncherSetup.h
     Worker.cpp
     Worker.h
-    MediaManager.cpp
-    MediaManager.h
     qml.qrc
     )
 
