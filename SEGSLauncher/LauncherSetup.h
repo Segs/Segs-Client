@@ -16,9 +16,6 @@ public:
     Q_INVOKABLE void write_launcher_settings(QVariantMap launcher_settings);
     //Q_INVOKABLE void verify_client_version(QString cox_dir);
 
-
-
-
 private:
 
 

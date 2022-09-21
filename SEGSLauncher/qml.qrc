@@ -22,5 +22,8 @@
         <file>Resources/Fonts/Cantarell-Bold.ttf</file>
         <file>Resources/Fonts/Cantarell-Oblique.ttf</file>
         <file>Resources/Fonts/Cantarell-Regular.ttf</file>
+        <file>Resources/Audio/launch.wav</file>
+        <file>Resources/Audio/startup.wav</file>
+        <file>MediaManager.qml</file>
     </qresource>
 </RCC>

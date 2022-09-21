@@ -9,7 +9,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 #set(CMAKE_AUTOUIC ON)
 
-find_package(Qt5 COMPONENTS Core Quick REQUIRED)
+find_package(Qt5 COMPONENTS Core Quick Multimedia REQUIRED)
 set(CMAKE_DEBUG_POSTFIX "d")
 
 #include_directories(${Qt5Widgets_INCLUDE_DIRS} ${QtQml_INCLUDE_DIRS})
@@ -24,12 +24,14 @@ set(SEGSLAUNCHER_SOURCES
     LauncherSetup.h
     Worker.cpp
     Worker.h
+    MediaManager.cpp
+    MediaManager.h
     qml.qrc
     )
 
 add_executable(${PROJECT_NAME} WIN32 ${SEGSLAUNCHER_SOURCES})
 target_compile_definitions(${PROJECT_NAME} PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Quick jcon_IMP)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Quick Qt5::Multimedia jcon_IMP)
 
 
 #message("Copying required Qt libraries and binaries to output directory....")

@@ -1,8 +1,9 @@
-import QtQml 2.8
+import QtQml 2.15
 import QtQuick 2.10
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.3
 import QtGraphicalEffects 1.0
+import QtMultimedia 5.15
 
 import segs.launchersetup 1.0
 import segs.launcher 1.0
@@ -19,6 +20,8 @@ Window {
     color: "#00000000"
     title: qsTr("SEGSLauncher")
     flags: Qt.FramelessWindowHint | Qt.WindowMinimizeButtonHint | Qt.Window
+
+    MediaManager { id: media_manager }
 
     // Set ID's for backend functions
     LauncherSetup { id: backend_launcher_setup }
@@ -231,6 +234,7 @@ Window {
                 onEntered: { button_play.state="Hovering" }
                 onExited: { button_play.state=""}
                 onClicked: {
+                    media_manager.launch_audio.play()
                     backend_launcher.launch_cox();
                     root.showMinimized()
                 }
@@ -1151,6 +1155,7 @@ Window {
 
     // When main window loaded, call these functions.
     Component.onCompleted: {
+        media_manager.startup_audio.play()
         start_up()
 
     }
