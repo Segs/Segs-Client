@@ -1,14 +1,14 @@
-#ifndef LAUNCHER_H
-#define LAUNCHER_H
+#pragma once
 
 #include <QObject>
 #include <QString>
-#include <QProcess>
 #include <QVariantMap>
-#include <QNetworkReply>
-#include <QJsonArray>
 #include <QJsonObject>
 #include <QThread>
+
+class QProcess;
+class QNetworkAccessManager;
+class QNetworkReply;
 
 class Launcher : public QObject
 {
@@ -16,7 +16,7 @@ class Launcher : public QObject
 
 public:
     explicit Launcher(QObject *parent = nullptr);
-    virtual ~Launcher();
+    ~Launcher() override;
     void fetch_server_status();
     Q_INVOKABLE void launch_cox();
     Q_INVOKABLE void launch_segsadmin();
@@ -33,6 +33,18 @@ public:
     Q_INVOKABLE QJsonObject get_server_information();
 
 
+public slots:
+    void handle_servers_reply();
+    void handle_releases_reply();
+    void handle_server_status_worker(bool status, QString server, QString uptime = "?");
+
+
+signals:
+    void fetchServerListFinished();
+    void fetchReleasesFinished();
+    void getServerStatus();
+    void serverStatusReady();
+
 private:
     QProcess *m_start_cox;
     QProcess *m_start_segsadmin;
@@ -47,17 +59,5 @@ private:
     QThread worker_thread; // Move to Private -- test it
     bool m_server_status;
 
-signals:
-    void fetchServerListFinished();
-    void fetchReleasesFinished();
-    void getServerStatus();
-    void serverStatusReady();
-
-public slots:
-    void handle_servers_reply();
-    void handle_releases_reply();
-    void handle_server_status_worker(bool status, QString server, QString uptime = "?");
 
 };
-
-#endif // LAUNCHER_H
