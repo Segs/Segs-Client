@@ -5,6 +5,7 @@
 #include <QVariantMap>
 #include <QJsonObject>
 #include <QThread>
+#include <QVersionNumber>
 
 class QProcess;
 class QNetworkAccessManager;
@@ -13,6 +14,8 @@ class QNetworkReply;
 class Launcher : public QObject
 {
     Q_OBJECT
+    // allow qml to access the launcher version QVersionNumber
+    Q_PROPERTY(QVersionNumber version READ get_launcher_version CONSTANT)
 
 public:
     explicit Launcher(QObject *parent = nullptr);
@@ -31,8 +34,7 @@ public:
     Q_INVOKABLE QVariantMap get_last_used_server();
     Q_INVOKABLE QJsonObject get_server_list();
     Q_INVOKABLE QJsonObject get_server_information();
-
-
+    static QVersionNumber get_launcher_version() { return m_version; }
 public slots:
     void handle_servers_reply();
     void handle_releases_reply();
@@ -46,6 +48,8 @@ signals:
     void serverStatusReady();
 
 private:
+    static const QVersionNumber m_version;
+
     QProcess *m_start_cox;
     QProcess *m_start_segsadmin;
     QNetworkReply *m_servers_network_reply;
@@ -58,6 +62,4 @@ private:
     QString m_server_name;
     QThread worker_thread; // Move to Private -- test it
     bool m_server_status;
-
-
 };

@@ -46,6 +46,11 @@ Window {
     property bool comboBox_server_select_italic: false
     property string server_info_text: ""
 
+    // set the launcher setup channel
+    Component.onCompleted: {
+        backend_launcher_setup.prepare_launcher_setup(backend_launcher.update_channel)
+    }
+
     // Code to enable frameless window to become draggable
     MouseArea {
         id: dragMouseRegion
@@ -988,6 +993,7 @@ Window {
                         onLinkActivated: Qt.openUrlExternally(link)
 
                         MouseArea {
+                            id: mouse_area_si
                             anchors.fill: parent
                             acceptedButtons: Qt.NoButton
                             cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
