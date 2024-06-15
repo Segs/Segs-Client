@@ -19,6 +19,7 @@ const QVersionNumber Launcher::m_version = QVersionNumber(0,0,1);
 
 Launcher::Launcher(QObject *parent) : QObject(parent)
 {
+    m_update_channel = "stable";
     // Worker thread for getting server status (RPC call)
     Worker *worker = new Worker;
     worker->moveToThread(&worker_thread);
