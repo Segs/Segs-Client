@@ -90,9 +90,13 @@ void LauncherSetup::version_check_finished(QNetworkReply *reply) {
         qDebug() << "Error loading version data: " << reply->errorString();
         return;
     }
-
-    QByteArray data = reply->readAll();
+    qDebug() << "Version data loaded successfully";
+    QByteArray data = reply->read(1024*64); // 64KB should be enough for the version data
     QJsonDocument doc = QJsonDocument::fromJson(data);
+    if (doc.isNull()) {
+        qDebug() << "Error parsing version data";
+        return;
+    }
     QJsonObject obj = doc.object();
     QJsonArray version_data = obj["version_data"].toArray();
     // collect all versions in the channel that are newer than the current version

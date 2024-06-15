@@ -30,7 +30,7 @@ public slots:
 private slots:
     void version_check_finished(QNetworkReply *reply);
 private:
-    constexpr static const char *launcher_version_url = "https://segs.io/launcher_version.json";
+    constexpr static const char *launcher_version_url = "https://segs.dev/launcher_version.json";
     QString m_channel;
     QVersionNumber m_latest_version;
     QStringList m_changelogs;

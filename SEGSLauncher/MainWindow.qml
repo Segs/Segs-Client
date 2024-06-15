@@ -25,7 +25,10 @@ Window {
 
     // Set ID's for backend functions
     LauncherSetup { id: backend_launcher_setup }
-    Launcher { id: backend_launcher }
+    Launcher {
+        id: backend_launcher
+        update_channel: "stable"
+    }
 
     // Load custom fonts
 
@@ -46,10 +49,6 @@ Window {
     property bool comboBox_server_select_italic: false
     property string server_info_text: ""
 
-    // set the launcher setup channel
-    Component.onCompleted: {
-        backend_launcher_setup.prepare_launcher_setup(backend_launcher.update_channel)
-    }
 
     // Code to enable frameless window to become draggable
     MouseArea {
@@ -1161,9 +1160,10 @@ Window {
 
     // When main window loaded, call these functions.
     Component.onCompleted: {
-        media_manager.startup_audio.play()
-        start_up()
-
+        // set the launcher setup channel
+        backend_launcher_setup.prepare_launcher_setup(backend_launcher.update_channel);
+        media_manager.startup_audio.play();
+        start_up();
     }
 
     //////////////////////////////////
