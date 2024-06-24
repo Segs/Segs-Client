@@ -97,7 +97,13 @@ void LauncherSetup::version_check_finished(QNetworkReply *reply) {
         qDebug() << "Error parsing version data";
         return;
     }
+
     QJsonObject obj = doc.object();
+    if(!obj.contains("version_data") || !obj["version_data"].isArray()) {
+        qDebug() << "Invalid/missing version data";
+        return;
+    }
+
     QJsonArray version_data = obj["version_data"].toArray();
     // collect all versions in the channel that are newer than the current version
     QVector<QPair<QVersionNumber, QString>> new_versions;
