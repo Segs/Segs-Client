@@ -25,7 +25,10 @@ Window {
 
     // Set ID's for backend functions
     LauncherSetup { id: backend_launcher_setup }
-    Launcher { id: backend_launcher }
+    Launcher {
+        id: backend_launcher
+        update_channel: "stable"
+    }
 
     // Load custom fonts
 
@@ -45,6 +48,7 @@ Window {
     // Other variables
     property bool comboBox_server_select_italic: false
     property string server_info_text: ""
+
 
     // Code to enable frameless window to become draggable
     MouseArea {
@@ -988,6 +992,7 @@ Window {
                         onLinkActivated: Qt.openUrlExternally(link)
 
                         MouseArea {
+                            id: mouse_area_si
                             anchors.fill: parent
                             acceptedButtons: Qt.NoButton
                             cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
@@ -1155,9 +1160,10 @@ Window {
 
     // When main window loaded, call these functions.
     Component.onCompleted: {
-        media_manager.startup_audio.play()
-        start_up()
-
+        // set the launcher setup channel
+        backend_launcher_setup.prepare_launcher_setup(backend_launcher.update_channel);
+        media_manager.startup_audio.play();
+        start_up();
     }
 
     //////////////////////////////////

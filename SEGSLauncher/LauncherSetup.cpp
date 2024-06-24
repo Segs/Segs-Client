@@ -1,20 +1,46 @@
 #include "LauncherSetup.h"
+#include "Launcher.h"
+
 #include <QCryptographicHash>
 #include <QDebug>
-#include <QFile>
 #include <QSettings>
 #include <QStandardPaths>
 #include <QIODevice>
-#include <QProcess>
 #include <QUrl>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 
-LauncherSetup::LauncherSetup(QObject *parent) : QObject(parent)
-{
 
+/*
+    Launcher version data is stored in a JSON file on the server
+    The launcher will download the JSON file and compare the version number
+    The format of the json file is as follows:
+    {
+        "version_data": [
+        {
+            "version": "1.0.0",
+            "channel": "stable",
+            "notes": "Release notes"
+        }]
+        "signature": "crypto signature"
+    }
+    crypto signature is a signature of the version data content
+*/
+
+LauncherSetup::LauncherSetup(QObject *parent) : QObject(parent) {
+    m_net_manager = new QNetworkAccessManager(this);
+    connect(m_net_manager, &QNetworkAccessManager::finished, this, &LauncherSetup::version_check_finished);
 }
 
-QVariantMap LauncherSetup::read_launcher_settings()
-{
+void LauncherSetup::prepare_launcher_setup(const QString &channel) {
+    m_channel = channel;
+    check_for_new_version();
+}
+
+QVariantMap LauncherSetup::read_launcher_settings() {
     QVariantMap launcher_settings;
     QSettings settings;
     settings.beginGroup("LauncherConfig");
@@ -33,23 +59,79 @@ QVariantMap LauncherSetup::read_launcher_settings()
 
     // TODO: For Debug only remove later
     QString settingsPath = settings.fileName();
-    qDebug()<<"Settings location: " + settingsPath;
+    qDebug() << "Settings location: " + settingsPath;
     //
 
     return launcher_settings;
 }
 
 
-void LauncherSetup::write_launcher_settings(QVariantMap launcher_settings)
-{
-   qDebug()<<launcher_settings;
-   QString cox_dir_path = QUrl(launcher_settings["cox_dir"].toString()).toLocalFile();
-   QSettings settings;
-   settings.beginGroup("LauncherConfig");
-   settings.setValue("InitialConfig", launcher_settings["initial_config"]);
-   settings.setValue("CoxDir", cox_dir_path);
-   settings.endGroup();
+void LauncherSetup::write_launcher_settings(QVariantMap launcher_settings) {
+    qDebug() << launcher_settings;
+    QString cox_dir_path = QUrl(launcher_settings["cox_dir"].toString()).toLocalFile();
+    QSettings settings;
+    settings.beginGroup("LauncherConfig");
+    settings.setValue("InitialConfig", launcher_settings["initial_config"]);
+    settings.setValue("CoxDir", cox_dir_path);
+    settings.endGroup();
 }
+
+// download the launcher version file from the server
+// verify the downloaded version against the current version
+// if the versions are different, emit a signal to the QML
+void LauncherSetup::check_for_new_version() {
+    QUrl url(launcher_version_url);
+    QNetworkRequest request(url);
+    m_net_manager->get(request);
+}
+
+void LauncherSetup::version_check_finished(QNetworkReply *reply) {
+    if (reply->error() != QNetworkReply::NoError) {
+        qDebug() << "Error loading version data: " << reply->errorString();
+        return;
+    }
+    qDebug() << "Version data loaded successfully";
+    QByteArray data = reply->read(1024*64); // 64KB should be enough for the version data
+    QJsonDocument doc = QJsonDocument::fromJson(data);
+    if (doc.isNull()) {
+        qDebug() << "Error parsing version data";
+        return;
+    }
+
+    QJsonObject obj = doc.object();
+    if(!obj.contains("version_data") || !obj["version_data"].isArray()) {
+        qDebug() << "Invalid/missing version data";
+        return;
+    }
+
+    QJsonArray version_data = obj["version_data"].toArray();
+    // collect all versions in the channel that are newer than the current version
+    QVector<QPair<QVersionNumber, QString>> new_versions;
+    for (const auto &version: version_data) {
+        QJsonObject ver = version.toObject();
+        if (ver["channel"].toString() == m_channel) {
+            QVersionNumber new_version = QVersionNumber::fromString(ver["version"].toString());
+            if (new_version > Launcher::get_launcher_version())
+                new_versions.push_back({new_version, ver["notes"].toString()});
+        }
+    }
+    if (!new_versions.empty()) {
+        std::sort(new_versions.begin(), new_versions.end(),
+                  [](const QPair<QVersionNumber, QString> &a, const QPair<QVersionNumber, QString> &b) {
+                      return a.first > b.first;
+                  });
+        m_latest_version = new_versions[0].first;
+        m_changelogs.clear();
+        for (const auto &ver: new_versions)
+            m_changelogs.push_back(ver.second);
+        emit newVersionAvailable(m_latest_version);
+    }
+}
+
+LauncherSetup::~LauncherSetup() {
+    delete m_net_manager;
+}
+
 /**
 void LauncherSetup::verify_client_version(QString cox_dir)
 {
