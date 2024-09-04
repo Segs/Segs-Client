@@ -1,4 +1,3 @@
-#include "Launcher.h"
 #include "Worker.h"
 
 #include "jcon/json_rpc_tcp_client.h"
@@ -7,6 +6,7 @@
 #include <QSettings>
 #include <QTime>
 #include <QDateTime>
+#include <QVariant>
 
 Worker::Worker(QObject *parent) : QObject(parent)
 {
@@ -24,7 +24,7 @@ void Worker::server_status_dispatcher()
     QSettings settings;
     settings.beginGroup("ServerConfig");
     settings.beginGroup("CommunityServers");
-    foreach (const QString &group, settings.childGroups())
+    for(const QString &group : settings.childGroups())
     {
             settings.beginGroup(group);
             qDebug()<<"Dispatching: "<<group;
@@ -35,7 +35,7 @@ void Worker::server_status_dispatcher()
     }
     settings.endGroup();
     settings.beginGroup("LocalServers");
-    foreach (const QString &group, settings.childGroups())
+    for(const QString &group : settings.childGroups())
     {
         settings.beginGroup(group);
         qDebug()<<"Dispatching: "<<group;
@@ -50,13 +50,17 @@ void Worker::server_status_dispatcher()
 }
 
 // AdminRPC call to server
-void Worker::fetch_server_status(QString auth_addr, QString server_name)
+void Worker::fetch_server_status(const QString &auth_addr, const QString &server_name)
 {
-    QString uptime = "";
+    QString uptime;
     qDebug()<<"RPC Client connecting to: "<<auth_addr;
     auto rpc_client = new jcon::JsonRpcTcpClient(this);
-    if(rpc_client->connectToServer(auth_addr, 6001))
+    if (!rpc_client->connectToServer(auth_addr, 6001))
     {
+        qDebug() << "Unable to connect to RPC server";
+        emit serverStatusWorkerReady(false, server_name);
+        return;
+    }
         qDebug()<<"Connected to RPC Server";
             auto result = rpc_client->call("ping");
             if (result->isSuccess())
@@ -68,9 +72,8 @@ void Worker::fetch_server_status(QString auth_addr, QString server_name)
                     QDateTime start_date(QDateTime::fromSecsSinceEpoch(res_2.toInt()));
                     QDateTime current_date(QDateTime::currentDateTime());
                     QString uptime_days = QString::number(start_date.daysTo(current_date));
-                    QString uptime = uptime_days;
-                    qDebug()<<"Uptime for: "<< server_name<<" is "<<uptime;
-                    emit serverStatusWorkerReady(true, server_name, uptime);
+            qDebug() << "Uptime for: " << server_name << " is " << uptime_days;
+            emit serverStatusWorkerReady(true, server_name, uptime_days);
                 }
                 else
                 {
@@ -86,12 +89,5 @@ void Worker::fetch_server_status(QString auth_addr, QString server_name)
                 emit serverStatusWorkerReady(false, server_name);
             }
     }
-    else
-    {
-        qDebug()<<"Unable to connect to RPC server";
-        emit serverStatusWorkerReady(false, server_name);
-    }
-
-}
 
 
