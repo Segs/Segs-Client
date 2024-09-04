@@ -97,7 +97,7 @@ private slots:
     void jsonResponseReceived(const QJsonObject& obj);
 
 private:
-    const QString InvalidRequestId = "";
+    static const QString InvalidRequestId;
 
     static QString formatLogMessage(const QString& method,
                                     const QVariantList& args,

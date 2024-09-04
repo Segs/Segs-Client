@@ -4,6 +4,7 @@
 #include "jcon_assert.h"
 #include "string_util.h"
 
+
 #include <QUuid>
 #include <QEventLoop>
 #include <QCoreApplication>
@@ -12,6 +13,8 @@
 #include <memory>
 
 namespace jcon {
+
+const QString JsonRpcClient::InvalidRequestId = "";
 
 JsonRpcClient::JsonRpcClient(std::shared_ptr<JsonRpcSocket> socket,
                              QObject* parent,
@@ -157,7 +160,6 @@ JsonRpcClient::doCallNamedParams(const QString& method,
 
     return request;
 }
-
 int JsonRpcClient::outstandingRequestCount() const
 {
     return m_outstanding_request_count;

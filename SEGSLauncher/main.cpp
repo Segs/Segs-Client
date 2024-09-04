@@ -9,10 +9,9 @@
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
-    app.setWindowIcon(QIcon(":/Resources/Icons/app-icon.svg"));
+    QGuiApplication::setWindowIcon(QIcon(":/Resources/Icons/app-icon.svg"));
 
     qmlRegisterType<LauncherSetup>("segs.launchersetup", 1, 0, "LauncherSetup");
     qmlRegisterType<Launcher>("segs.launcher", 1, 0, "Launcher");
@@ -28,5 +27,5 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("SEGSLauncher");
 
 
-    return app.exec();
+    return QGuiApplication::exec();
 }

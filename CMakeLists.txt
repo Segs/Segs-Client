@@ -1,5 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.8)
-PROJECT(SEGS-Client)
+PROJECT(SEGSClient)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -45,7 +45,7 @@ add_subdirectory(3rd_party)
 link_directories(${PROJECT_SOURCE_DIR}/lib) # ERICEDIT: Changed to lowercase.
 
 include(LocateQt5)
-find_package(Qt5 COMPONENTS Core Sql REQUIRED)
+find_package(Qt6 COMPONENTS Core Sql REQUIRED)
 
 link_directories(${ThirdParty_Install_Dir}/lib)
 include_directories(SYSTEM ${ThirdParty_Install_Dir}/include)

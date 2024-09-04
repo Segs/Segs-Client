@@ -1,4 +1,3 @@
-//#include "version.h"
 #include "Launcher.h"
 #include "Worker.h"
 
@@ -10,12 +9,15 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QJsonDocument>
+#include <QJsonArray>
 #include <QTimer>
 #include <QDir>
 
 
+const QVersionNumber Launcher::m_version = QVersionNumber(0,0,1);
 Launcher::Launcher(QObject *parent) : QObject(parent)
 {
+    m_update_channel = "stable";
     // Worker thread for getting server status (RPC call)
     Worker *worker = new Worker;
     worker->moveToThread(&worker_thread);
@@ -37,8 +39,10 @@ void Launcher::launch_cox()
     settings.beginGroup("LauncherConfig");
     QString cox_dir = settings.value("CoxDir", "").toString();
     settings.endGroup();
-    QStringList arguments;
-    arguments<<"-project"<< "SEGS";
+    QStringList arguments = {
+        "-project",
+        "SEGS"
+    };
     QString program = cox_dir + "/CoX.exe";
 
     m_start_cox = new QProcess(this);
@@ -52,7 +56,7 @@ void Launcher::launch_segsadmin()
 
     m_start_segsadmin = new QProcess(this);
     m_start_segsadmin->setWorkingDirectory(QDir::currentPath());
-    m_start_segsadmin->start(program);
+    m_start_segsadmin->start(program,QStringList());
 
     qDebug()<<"launch_segsadmin";
 }
@@ -118,7 +122,8 @@ void Launcher::set_server(QVariantMap server_details)
     settings.setValue("LastServerIP", server_details["server_ip"]);
     settings.endGroup();
 
-    QSettings segs_settings(QString("HKEY_CURRENT_USER\\Software\\Cryptic\\%1").arg("SEGS"), QSettings::NativeFormat);
+    QSettings segs_settings(QString(R"(HKEY_CURRENT_USER\Software\Cryptic\%1)").arg("SEGS"),
+                            QSettings::NativeFormat);
     segs_settings.setValue("Auth", server_details["server_ip"]);
 }
 
@@ -147,7 +152,7 @@ QJsonObject Launcher::get_server_list()
     settings.beginGroup("ServerConfig");
     settings.beginGroup("CommunityServers");
 
-    foreach (const QString &group, settings.childGroups())
+    for(const QString &group : settings.childGroups())
     {
         QJsonObject server;
         settings.beginGroup(group);
@@ -164,7 +169,7 @@ QJsonObject Launcher::get_server_list()
     // Get local servers
     settings.beginGroup("LocalServers");
 
-    foreach (const QString &group, settings.childGroups())
+    for(const QString &group : settings.childGroups())
     {
         QJsonObject server;
         settings.beginGroup(group);
@@ -194,7 +199,7 @@ QJsonObject Launcher::get_server_information()
     settings.beginGroup("ServerConfig");
     settings.beginGroup("CommunityServers");
 
-    foreach (const QString &group, settings.childGroups())
+    for(const QString &group : settings.childGroups())
     {
         QJsonObject server;
         settings.beginGroup(group);
@@ -326,7 +331,8 @@ void Launcher::add_local_server(QVariantMap server)
 // Write launcher / game settings to QSettings
 void Launcher::set_launcher_game_settings(QVariantMap settings)
 {
-    QSettings segs_settings(QString("HKEY_CURRENT_USER\\Software\\Cryptic\\%1").arg("SEGS"), QSettings::NativeFormat);
+    QSettings segs_settings(QString(R"(HKEY_CURRENT_USER\Software\Cryptic\%1)").arg("SEGS"),
+                            QSettings::NativeFormat);
     segs_settings.setValue("screenX", settings["screenX"].toString());
     segs_settings.setValue("screenY", settings["screenY"].toString());
     segs_settings.setValue("fullscreen", settings["fullscreen"].toString());
