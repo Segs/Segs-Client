@@ -33,5 +33,4 @@ JCON_API QStringList variantListToStringList(const QVariantList& l);
  * @return A list with the string representations of each element in the list.
  */
 JCON_API QStringList variantMapToStringList(const QVariantMap& m);
-
 }

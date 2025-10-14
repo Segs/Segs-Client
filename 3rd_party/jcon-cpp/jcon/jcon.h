@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QtCore/qglobal.h>
+#include <QtGlobal>
 
 //#ifndef JCON_DLL
 //#define JCON_DLL

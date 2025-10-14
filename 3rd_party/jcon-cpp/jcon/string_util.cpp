@@ -37,5 +37,4 @@ QStringList variantMapToStringList(const QVariantMap& m)
     }
     return res;
 }
-
 }

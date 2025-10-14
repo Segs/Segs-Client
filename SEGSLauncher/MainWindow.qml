@@ -1,9 +1,9 @@
-import QtQml 2.15
-import QtQuick 2.10
-import QtQuick.Window 2.2
-import QtQuick.Controls 2.3
-import QtGraphicalEffects 1.0
-import QtMultimedia 5.15
+import QtQml
+import QtQuick
+import QtQuick.Window
+import QtQuick.Controls
+import QtQuick.Effects
+// QtMultimedia not needed here
 
 import segs.launchersetup 1.0
 import segs.launcher 1.0
@@ -25,7 +25,10 @@ Window {
 
     // Set ID's for backend functions
     LauncherSetup { id: backend_launcher_setup }
-    Launcher { id: backend_launcher }
+    Launcher {
+        id: backend_launcher
+        update_channel: "stable"
+    }
 
     // Load custom fonts
 
@@ -45,6 +48,7 @@ Window {
     // Other variables
     property bool comboBox_server_select_italic: false
     property string server_info_text: ""
+
 
     // Code to enable frameless window to become draggable
     MouseArea {
@@ -88,7 +92,7 @@ Window {
             height: 100
             z: 20
             smooth: true
-            antialiasing: true
+            // antialiasing property removed in Qt 6
             clip: false
             opacity: 1
             fillMode: Image.Stretch
@@ -197,6 +201,7 @@ Window {
                 anchors.fill: parent
                 fillMode: Image.PreserveAspectFit
                 source: "Resources/Images/button_play.png"
+                visible: false // rendered via MultiEffect
             }
 
             Text {
@@ -215,14 +220,14 @@ Window {
                 font.family: cuppaJo.name
             }
 
-            DropShadow {
-                //color: "#808080"
+            MultiEffect {
                 anchors.fill: button_play
-                horizontalOffset: 3
-                verticalOffset: 3
-                radius: 8.0
-                samples: 10
                 source: button_play_image
+                shadowEnabled: true
+                shadowHorizontalOffset: 3
+                shadowVerticalOffset: 3
+                shadowColor: "#80000000"
+                shadowBlur: 0.5
             }
 
             MouseArea {
@@ -314,16 +319,17 @@ Window {
                 id: button_settings_img
                 source: "Resources/Images/button_settings.png"
                 anchors.fill: parent
+                visible: false // rendered via MultiEffect
             }
 
-            DropShadow {
+            MultiEffect {
                 anchors.fill: button_settings
-                horizontalOffset: 3
-                verticalOffset: 3
-                radius: 8.0
-                samples: 10
-                //color: "grey"
                 source: button_settings_img
+                shadowEnabled: true
+                shadowHorizontalOffset: 3
+                shadowVerticalOffset: 3
+                shadowColor: "#80000000"
+                shadowBlur: 0.5
             }
 
             MouseArea {
@@ -988,6 +994,7 @@ Window {
                         onLinkActivated: Qt.openUrlExternally(link)
 
                         MouseArea {
+                            id: mouse_area_si
                             anchors.fill: parent
                             acceptedButtons: Qt.NoButton
                             cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
@@ -1155,9 +1162,10 @@ Window {
 
     // When main window loaded, call these functions.
     Component.onCompleted: {
-        media_manager.startup_audio.play()
-        start_up()
-
+        // set the launcher setup channel
+        backend_launcher_setup.prepare_launcher_setup(backend_launcher.update_channel);
+        media_manager.startup_audio.play();
+        start_up();
     }
 
     //////////////////////////////////
