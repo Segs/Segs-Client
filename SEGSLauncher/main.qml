@@ -1,5 +1,5 @@
-import QtQml 2.8
-import QtQuick 2.1
+import QtQml
+import QtQuick
 
 Item {
     Loader {

@@ -3,12 +3,20 @@
 #include <QIcon>
 #include <QQmlContext>
 #include <QDebug>
+#include <QSurfaceFormat>
+#include <QQuickWindow>
 #include "Launcher.h"
 #include "LauncherSetup.h"
 #include "Worker.h"
 
 int main(int argc, char *argv[])
 {
+    // Ensure alpha channel for translucent windows under Qt 6
+    QSurfaceFormat fmt = QSurfaceFormat::defaultFormat();
+    fmt.setAlphaBufferSize(8);
+    QSurfaceFormat::setDefaultFormat(fmt);
+    QQuickWindow::setDefaultAlphaBuffer(true);
+
     QGuiApplication app(argc, argv);
     QGuiApplication::setWindowIcon(QIcon(":/Resources/Icons/app-icon.svg"));
 
@@ -17,7 +25,8 @@ int main(int argc, char *argv[])
     qmlRegisterType<Worker>("segs.worker", 1, 0, "Worker");
 
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    // Load the main application window directly to avoid Loader/window indirection.
+    engine.load(QUrl(QStringLiteral("qrc:/MainWindow.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 

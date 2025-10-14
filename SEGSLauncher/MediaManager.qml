@@ -1,21 +1,19 @@
-import QtQuick 2.1
-import QtMultimedia 5.15
+import QtQuick
+import QtMultimedia
 
 Item {
 property alias startup_audio: startup_audio
 property alias launch_audio: launch_audio
 
-Audio {
+MediaPlayer {
     id: startup_audio
-    source: "qrc:Resources/Audio/startup.wav"
-    audioRole: Audio.SonificationRole
-    volume: 0.5
+    source: "qrc:/Resources/Audio/startup.wav"
+    audioOutput: AudioOutput { volume: 0.5 }
 }
 
-Audio {
+MediaPlayer {
     id: launch_audio
-    source: "qrc:Resources/Audio/launch.wav"
-    audioRole: Audio.SonificationRole
-    volume: 0.5
+    source: "qrc:/Resources/Audio/launch.wav"
+    audioOutput: AudioOutput { volume: 0.5 }
 }
 }
