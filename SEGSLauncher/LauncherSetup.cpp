@@ -1,5 +1,6 @@
 #include "LauncherSetup.h"
 #include "Launcher.h"
+
 #include <QCryptographicHash>
 #include <QDebug>
 #include <QSettings>
@@ -12,11 +13,12 @@
 #include <QJsonObject>
 #include <QJsonArray>
 
+
 /*
     Launcher version data is stored in a JSON file on the server
     The launcher will download the JSON file and compare the version number
     The format of the json file is as follows:
-{
+    {
         "version_data": [
         {
             "version": "1.0.0",
@@ -57,7 +59,7 @@ QVariantMap LauncherSetup::read_launcher_settings() {
 
     // TODO: For Debug only remove later
     QString settingsPath = settings.fileName();
-    qDebug()<<"Settings location: " + settingsPath;
+    qDebug() << "Settings location: " + settingsPath;
     //
 
     return launcher_settings;
@@ -65,14 +67,15 @@ QVariantMap LauncherSetup::read_launcher_settings() {
 
 
 void LauncherSetup::write_launcher_settings(QVariantMap launcher_settings) {
-   qDebug()<<launcher_settings;
-   QString cox_dir_path = QUrl(launcher_settings["cox_dir"].toString()).toLocalFile();
-   QSettings settings;
-   settings.beginGroup("LauncherConfig");
-   settings.setValue("InitialConfig", launcher_settings["initial_config"]);
-   settings.setValue("CoxDir", cox_dir_path);
-   settings.endGroup();
+    qDebug() << launcher_settings;
+    QString cox_dir_path = QUrl(launcher_settings["cox_dir"].toString()).toLocalFile();
+    QSettings settings;
+    settings.beginGroup("LauncherConfig");
+    settings.setValue("InitialConfig", launcher_settings["initial_config"]);
+    settings.setValue("CoxDir", cox_dir_path);
+    settings.endGroup();
 }
+
 // download the launcher version file from the server
 // verify the downloaded version against the current version
 // if the versions are different, emit a signal to the QML
@@ -128,6 +131,7 @@ void LauncherSetup::version_check_finished(QNetworkReply *reply) {
 LauncherSetup::~LauncherSetup() {
     delete m_net_manager;
 }
+
 /**
 void LauncherSetup::verify_client_version(QString cox_dir)
 {

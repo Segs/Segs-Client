@@ -1,7 +1,7 @@
-import QtQml 2.8
-import QtQuick 2.10
-import QtQuick.Window 2.2
-import QtQuick.Controls 2.3
+import QtQml
+import QtQuick
+import QtQuick.Window
+import QtQuick.Controls
 
 import segs.launcher 1.0
 

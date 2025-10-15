@@ -1,4 +1,5 @@
 #include "Launcher.h"
+
 #include "Worker.h"
 
 #include <QProcess>
@@ -15,6 +16,7 @@
 
 
 const QVersionNumber Launcher::m_version = QVersionNumber(0,0,1);
+
 Launcher::Launcher(QObject *parent) : QObject(parent)
 {
     m_update_channel = "stable";

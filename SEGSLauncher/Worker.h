@@ -13,11 +13,9 @@ public:
 signals:
     void serverStatusWorkerReady(bool status, QString server, QString uptime = "?");
 
-
 public slots:
     void server_status_dispatcher();
 
 private:
     int m_rpc_timeout = 5000; // Milliseconds (5 Seconds)
 };
-
