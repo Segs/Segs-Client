@@ -1,7 +1,7 @@
-import QtQuick 2.0
-import QtQuick.Controls 2.0
-import QtQuick.Window 2.2
-import QtQuick.Dialogs 1.0
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Window
+import QtQuick.Dialogs
 
 import segs.launchersetup 1.0
 
@@ -80,7 +80,7 @@ Item {
                 width: 31
                 height: 40
                 text: qsTr("...")
-                onClicked: { file_dialog_cox_dir.visible = true }
+                onClicked: { file_dialog_cox_dir.open() }
             }
         }
 
@@ -109,15 +109,12 @@ Item {
 FileDialog {
     id: file_dialog_cox_dir
     title: "Please choose your CoX directory"
-    folder: shortcuts.home
-    selectFolder: true
-    selectMultiple: false
+    fileMode: FileDialog.Directory
     onAccepted: {
-        console.log("DEBUG: File chosen: " + file_dialog_cox_dir.folder);
-        textField_cox_dir.text = file_dialog_cox_dir.folder;
-        cox_dir = file_dialog_cox_dir.folder;
-
-
+        var url = selectedFiles && selectedFiles.length > 0 ? selectedFiles[0] : "";
+        console.log("DEBUG: Directory chosen: " + url);
+        textField_cox_dir.text = url;
+        cox_dir = url;
     }
     onRejected: { console.log("DEBUG: File dialog closed") }
 
@@ -136,5 +133,4 @@ function set_launcher_settings(){
 
 }
 }
-
 

@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
 
-
 project(SEGSLauncher LANGUAGES CXX)
 
 
@@ -11,7 +10,6 @@ set(CMAKE_AUTORCC ON)
 find_package(Qt6 COMPONENTS Core Quick Multimedia Network REQUIRED)
 set(CMAKE_DEBUG_POSTFIX "d")
 
-
 set(SEGSLAUNCHER_SOURCES
     main.cpp
     Launcher.cpp
@@ -21,7 +19,7 @@ set(SEGSLAUNCHER_SOURCES
     Worker.cpp
     Worker.h
     qml.qrc
-    )
+)
 
 add_executable(${PROJECT_NAME} WIN32 ${SEGSLAUNCHER_SOURCES})
 target_compile_definitions(${PROJECT_NAME} PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)

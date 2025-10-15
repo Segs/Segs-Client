@@ -61,33 +61,32 @@ void Worker::fetch_server_status(const QString &auth_addr, const QString &server
         emit serverStatusWorkerReady(false, server_name);
         return;
     }
-        qDebug()<<"Connected to RPC Server";
-            auto result = rpc_client->call("ping");
-            if (result->isSuccess())
-            {
-                auto result_2 = rpc_client->call("getStartTime");
-                if (result_2->isSuccess())
-                {
-                    QVariant res_2 = result_2->result();
-                    QDateTime start_date(QDateTime::fromSecsSinceEpoch(res_2.toInt()));
-                    QDateTime current_date(QDateTime::currentDateTime());
-                    QString uptime_days = QString::number(start_date.daysTo(current_date));
+
+    qDebug() << "Connected to RPC Server";
+    auto result = rpc_client->call("ping");
+    if (result->isSuccess())
+    {
+        auto result_2 = rpc_client->call("getStartTime");
+        if (result_2->isSuccess())
+        {
+            QVariant res_2 = result_2->result();
+            QDateTime start_date(QDateTime::fromSecsSinceEpoch(res_2.toInt()));
+            QDateTime current_date(QDateTime::currentDateTime());
+            QString uptime_days = QString::number(start_date.daysTo(current_date));
             qDebug() << "Uptime for: " << server_name << " is " << uptime_days;
             emit serverStatusWorkerReady(true, server_name, uptime_days);
-                }
-                else
-                {
-                    QString err_str = result->toString();
-                    qDebug() << "Result: " << err_str;
-                    emit serverStatusWorkerReady(false, server_name);
-                }
-            }
-            else
-            {
-                QString err_str = result->toString();
-                qDebug() << "Result: " << err_str;
-                emit serverStatusWorkerReady(false, server_name);
-            }
+        }
+        else
+        {
+            QString err_str = result->toString();
+            qDebug() << "Result: " << err_str;
+            emit serverStatusWorkerReady(false, server_name);
+        }
     }
-
-
+    else
+    {
+        QString err_str = result->toString();
+        qDebug() << "Result: " << err_str;
+        emit serverStatusWorkerReady(false, server_name);
+    }
+}

@@ -14,13 +14,13 @@ class QNetworkReply;
 class Launcher : public QObject
 {
     Q_OBJECT
-
     // allow qml to access the launcher version QVersionNumber
     Q_PROPERTY(QVersionNumber version READ get_launcher_version CONSTANT)
     // allow access to the update_channel from qml
     Q_PROPERTY(QString update_channel READ update_channel WRITE set_update_channel NOTIFY update_channel_changed)
 public:
     static QVersionNumber get_launcher_version() { return m_version; }
+
     explicit Launcher(QObject *parent = nullptr);
     ~Launcher() override;
     void fetch_server_status();
@@ -46,6 +46,7 @@ public slots:
     void handle_releases_reply();
     void handle_server_status_worker(bool status, QString server, QString uptime = "?");
 
+
 signals:
     void fetchServerListFinished();
     void fetchReleasesFinished();
@@ -67,7 +68,4 @@ private:
     QString m_server_name;
     QThread worker_thread; // Move to Private -- test it
     bool m_server_status;
-
-
 };
-
