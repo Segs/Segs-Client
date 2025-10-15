@@ -1202,7 +1202,7 @@ Window {
         var launcher_settings_obj = backend_launcher_setup.read_launcher_settings();
         if (launcher_settings_obj["initial_config"] === true)
         {
-            mainWindowLoader.active = true;
+            setupScreenLoader.active = true;
             textField_screen_x.text = launcher_settings_obj["screenX"];
             textField_screen_y.text = launcher_settings_obj["screenY"];
             checkBox_fullscreen.checked = launcher_settings_obj["fullscreen"];
