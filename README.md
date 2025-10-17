@@ -1,3 +1,5 @@
+<img width="332" height="323" alt="SEGS Launcher" src="https://github.com/user-attachments/assets/f781b513-5f0b-48d1-a73b-1ba562b09f80" />
+
 # SEGS Launcher and Custom Client
 
 *NOTE* : Currently, this is just the Launcher. The client development will begin soon after a stable working engine is available. 
@@ -26,3 +28,4 @@ Running the application will generate the SEGSLauncher.conf file. Location of th
 
 ## SEGS Client
 Client development will begin soon after a stable working engine is available.
+
